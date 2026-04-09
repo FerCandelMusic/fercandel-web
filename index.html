@@ -169,17 +169,18 @@
     .carousel-slide {
       position: absolute;
       inset: 0;
-      background-size: cover;
-      background-position: center top;
       opacity: 0;
       transition: opacity 1.4s ease-in-out;
+      overflow: hidden;
     }
     .carousel-slide.active { opacity: 1; }
-
-    .slide-1 { background-image: url('assets/img/00_original_encuadrada.jpg'); }
-    .slide-2 { background-image: url('assets/img/27_thermal.jpg'); }
-    .slide-3 { background-image: url('assets/img/02_calido.jpg'); }
-    .slide-4 { background-image: url('assets/img/23_negativo_rojo.jpg'); }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
     .carousel-overlay {
       position: absolute;
@@ -194,7 +195,7 @@
     }
 
     /* Ken Burns effect */
-    .carousel-slide.active {
+    .carousel-slide.active img {
       animation: kenburns 8s ease-out forwards;
     }
     @keyframes kenburns {
@@ -692,10 +693,10 @@
   <!-- ── HERO ── -->
   <section id="inicio">
     <div class="carousel">
-      <div class="carousel-slide slide-1 active"></div>
-      <div class="carousel-slide slide-2"></div>
-      <div class="carousel-slide slide-3"></div>
-      <div class="carousel-slide slide-4"></div>
+      <div class="carousel-slide slide-1 active"><img src="assets/img/00_original_encuadrada.jpg" alt="Fer Candel saxofonista" loading="eager" /></div>
+      <div class="carousel-slide slide-2"><img src="assets/img/27_thermal.jpg" alt="Fer Candel saxofonista" loading="lazy" /></div>
+      <div class="carousel-slide slide-3"><img src="assets/img/02_calido.jpg" alt="Fer Candel saxofonista" loading="lazy" /></div>
+      <div class="carousel-slide slide-4"><img src="assets/img/23_negativo_rojo.jpg" alt="Fer Candel saxofonista" loading="lazy" /></div>
       <div class="carousel-overlay"></div>
     </div>
     <div class="hero-content">
@@ -786,7 +787,7 @@
         </div>
         <div class="contacto-item reveal reveal-delay-3">
           <span class="contacto-item-label">Email</span>
-          <span class="contacto-item-value"><a href="mailto:fercandelmusic@gmail.com">fercandelmusic@gmail.com</a></span>
+          <span class="contacto-item-value"><a href="/cdn-cgi/l/email-protection#d7b1b2a5b4b6b9b3b2bbbaa2a4beb497b0bab6bebbf9b4b8ba"><span class="__cf_email__" data-cfemail="ec8a899e8f8d8288898081999f858fac8b818d8580c28f8381">[email&#160;protected]</span></a></span>
         </div>
         <div class="reveal reveal-delay-4">
           <p class="contacto-item-label" style="margin-bottom:0.75rem">Sígueme</p>
@@ -809,9 +810,9 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.44 5.44l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
           600 907 538
         </a>
-        <a href="mailto:fercandelmusic@gmail.com?subject=Consulta%20para%20mi%20evento" class="cta-btn cta-btn--email">
+        <a href="/cdn-cgi/l/email-protection#5335362130323d37363f3e26203a3013343e323a3f7d303c3e6c202631393630276e103c3d20263f2732766163233221327661633e3a7661633625363d273c" class="cta-btn cta-btn--email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          fercandelmusic@gmail.com
+          <span class="__cf_email__" data-cfemail="3452514657555a5051585941475d57745359555d581a575b59">[email&#160;protected]</span>
         </a>
       </div>
     </div>
@@ -824,7 +825,7 @@
   </footer>
 
   <!-- ── JS ── -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── Carousel ──
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
@@ -869,21 +870,4 @@
         burger.classList.remove('open');
         mobileMenu.classList.remove('open');
       });
-    });
-
-    // ── Scroll reveal ──
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealEls.forEach(el => observer.observe(el));
-
-  </script>
-</body>
-</html>
+    }
