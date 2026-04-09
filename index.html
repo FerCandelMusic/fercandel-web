@@ -28,7 +28,7 @@
       --text-muted: #8a9ab5;
       --white: #ffffff;
       --nav-h: 64px;
-      --section-bg: var(--dark2);
+      --section-bg: rgba(8, 12, 18, 0.72);
     }
 
     html { scroll-behavior: smooth; }
@@ -158,12 +158,13 @@
       position: relative;
       height: 100vh;
       min-height: 600px;
-      overflow: hidden;
+      background: transparent;
     }
 
     .carousel {
-      position: absolute;
+      position: fixed;
       inset: 0;
+      z-index: 0;
     }
     .carousel-slide {
       position: absolute;
@@ -287,7 +288,7 @@
 
     /* Carousel dots */
     .carousel-dots {
-      position: absolute;
+      position: fixed;
       bottom: 2rem;
       right: 2.5rem;
       z-index: 3;
@@ -785,7 +786,7 @@
         </div>
         <div class="contacto-item reveal reveal-delay-3">
           <span class="contacto-item-label">Email</span>
-          <span class="contacto-item-value"><a href="/cdn-cgi/l/email-protection#85e3e0f7e6e4ebe1e0e9e8f0f6ece6c5e2e8e4ece9abe6eae8"><span class="__cf_email__" data-cfemail="7c1a190e1f1d1218191011090f151f3c1b111d1510521f1311">[email&#160;protected]</span></a></span>
+          <span class="contacto-item-value"><a href="mailto:fercandelmusic@gmail.com">fercandelmusic@gmail.com</a></span>
         </div>
         <div class="reveal reveal-delay-4">
           <p class="contacto-item-label" style="margin-bottom:0.75rem">Sígueme</p>
@@ -808,9 +809,9 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.44 5.44l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
           600 907 538
         </a>
-        <a href="/cdn-cgi/l/email-protection#b2d4d7c0d1d3dcd6d7dedfc7c1dbd1f2d5dfd3dbde9cd1dddf8dc1c7d0d8d7d1c68ff1dddcc1c7dec6d3978082c2d3c0d3978082dfdb978082d7c4d7dcc6dd" class="cta-btn cta-btn--email">
+        <a href="mailto:fercandelmusic@gmail.com?subject=Consulta%20para%20mi%20evento" class="cta-btn cta-btn--email">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span class="__cf_email__" data-cfemail="ed8b889f8e8c8389888180989e848ead8a808c8481c38e8280">[email&#160;protected]</span>
+          fercandelmusic@gmail.com
         </a>
       </div>
     </div>
@@ -823,7 +824,7 @@
   </footer>
 
   <!-- ── JS ── -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // ── Carousel ──
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
@@ -868,4 +869,21 @@
         burger.classList.remove('open');
         mobileMenu.classList.remove('open');
       });
-    }
+    });
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+  </script>
+</body>
+</html>
