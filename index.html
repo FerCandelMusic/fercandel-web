@@ -870,21 +870,19 @@
         mobileMenu.classList.remove('open');
       });
     }
+    });
+
     // ── Scroll reveal ──
     const revealEls = document.querySelectorAll('.reveal');
-    if (window.innerWidth <= 768) {
-      revealEls.forEach(el => el.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.05 });
-      revealEls.forEach(el => observer.observe(el));
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
