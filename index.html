@@ -8,9 +8,13 @@
   <meta name="keywords" content="saxofonista eventos, saxofonista bodas, saxofonista Madrid, Fer Candel, saxofón en vivo" />
   <meta property="og:title" content="Fer Candel · Saxofonista para Eventos" />
   <meta property="og:description" content="Música en vivo que transforma cualquier evento. Bodas, corporativos, restaurantes." />
-  <meta property="og:image" content="assets/img/00_original_encuadrada.jpg" />
-  <meta property="og:url" content="https://www.fercandel.com" />
+  <meta property="og:image" content="https://fercandel.com/assets/img/00_original_encuadrada.jpg" />
+  <meta property="og:url" content="https://fercandel.com" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fer Candel · Saxofonista para Eventos" />
+  <meta name="twitter:description" content="Música en vivo que transforma cualquier evento. Bodas, corporativos, restaurantes." />
+  <meta name="twitter:image" content="https://fercandel.com/assets/img/00_original_encuadrada.jpg" />
   <link rel="canonical" href="https://fercandel.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +37,9 @@
       --section-bg: rgba(8, 12, 18, 0.72);
     }
 
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
 
     body {
       font-family: 'Raleway', sans-serif;
@@ -123,24 +129,27 @@
 
     /* Mobile menu */
     .nav-mobile {
-      display: none;
+      display: flex;
+      flex-direction: column;
       position: fixed;
       top: var(--nav-h); left: 0; right: 0;
       background: rgba(8,12,18,0.97);
       backdrop-filter: blur(16px);
       z-index: 999;
       padding: 2rem;
-      flex-direction: column;
       gap: 1.5rem;
       border-bottom: 1px solid rgba(82,152,232,0.15);
       transform: translateY(-10px);
       opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
     }
     .nav-mobile.open {
-      display: flex;
       opacity: 1;
       transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
     }
     .nav-mobile a {
       color: var(--text);
@@ -296,6 +305,7 @@
       z-index: 3;
       display: flex;
       gap: 8px;
+      transition: opacity 0.4s;
     }
     .dot {
       width: 6px; height: 6px;
@@ -756,7 +766,7 @@
       <li><a href="#agenda">Agenda</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="nav-burger" id="burger" aria-label="Menú">
+    <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -771,6 +781,7 @@
   </div>
 
   <!-- ── HERO ── -->
+  <main>
   <section id="inicio">
     <div class="carousel">
       <div class="carousel-slide slide-1 active"></div>
@@ -937,10 +948,12 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ── FOOTER ── -->
   <footer>
     <span class="footer-brand">Fer <span>Candel</span> · Saxofonista</span>
-    <span class="footer-copy">© 2025 fercandel.com</span>
+    <span class="footer-copy">© 2026 fercandel.com</span>
   </footer>
 
   <!-- ── JS ── -->
@@ -975,21 +988,46 @@
 
     startTimer();
 
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearInterval(timer);
+      else startTimer();
+    });
+
     // ── Mobile menu ──
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
 
     burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
+      const isOpen = burger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', isOpen);
     });
 
     document.querySelectorAll('.mobile-link').forEach(link => {
       link.addEventListener('click', () => {
         burger.classList.remove('open');
         mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
       });
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && burger.classList.contains('open')) {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.focus();
+      }
+    });
+
+    // ── Ocultar dots al salir del hero ──
+    const carouselDots = document.getElementById('carouselDots');
+    const heroSection = document.getElementById('inicio');
+    const heroObserver = new IntersectionObserver((entries) => {
+      carouselDots.style.opacity = entries[0].isIntersecting ? '1' : '0';
+      carouselDots.style.pointerEvents = entries[0].isIntersecting ? 'auto' : 'none';
+    }, { threshold: 0.1 });
+    heroObserver.observe(heroSection);
 
     // ── Scroll reveal ──
     const revealEls = document.querySelectorAll('.reveal');
