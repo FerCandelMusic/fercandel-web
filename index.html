@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fer Candel · Saxofonista para Eventos</title>
-  <meta name="description" content="Saxofonista profesional para bodas, eventos corporativos, restaurantes y terrazas. Soul, Jazz, Blues, Rock, Pop y House. Madrid, Cádiz, Sevilla, Málaga y Huelva." />
+  <meta name="description" content="Saxofonista profesional para bodas, eventos corporativos, restaurantes y terrazas. Soul, Jazz, Blues, Rock, Pop, baladas y House. Madrid, Cádiz, Sevilla, Málaga y Huelva." />
   <meta name="keywords" content="saxofonista eventos, saxofonista bodas, saxofonista Madrid, saxofonista Cádiz, saxofonista Sevilla, saxofonista Málaga, saxofonista Huelva, Fer Candel, saxofón en vivo" />
   <meta property="og:title" content="Fer Candel · Saxofonista para Eventos" />
   <meta property="og:description" content="Música en vivo que transforma cualquier evento. Bodas, corporativos, restaurantes." />
@@ -579,6 +579,52 @@
     }
 
     /* ── CONTACTO ── */
+    /* ── FAQ ── */
+    #faq {
+      background: var(--dark2);
+      border-top: 1px solid rgba(82,152,232,0.12);
+    }
+    .faq-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-list { border-top: 1px solid rgba(82,152,232,0.15); }
+    .faq-item { border-bottom: 1px solid rgba(82,152,232,0.15); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--white);
+      transition: color 0.2s ease;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover,
+    .faq-item summary:focus-visible { color: var(--accent); outline: none; }
+    .faq-item p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding: 0 2.5rem 1.5rem 0;
+      margin: 0;
+    }
+    .faq-item p a { color: var(--accent); text-decoration: none; }
+    .faq-item p a:hover { text-decoration: underline; }
+
     #contacto {
       background: var(--dark2);
       position: relative;
@@ -809,7 +855,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Saxofonista para eventos",
-        "description": "Actuaciones de saxofón en directo para bodas, eventos corporativos, restaurantes y terrazas. Repertorio de Soul, Jazz, Blues, Rock, Pop y House.",
+        "description": "Actuaciones de saxofón en directo para bodas, eventos corporativos, restaurantes y terrazas. Repertorio de Soul, Jazz, Blues, Rock, Pop, baladas y House.",
         "areaServed": [
           { "@type": "City", "name": "Madrid" },
           { "@type": "City", "name": "Cádiz" },
@@ -820,6 +866,94 @@
       }
     }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Para qué tipo de eventos puedo contratarte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bodas (ceremonia y cóctel), eventos corporativos, hoteles, restaurantes y terrazas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué música tocas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Soul, Jazz, Blues, Rock, Pop, baladas y House, con saxo tenor y bases musicales de alta calidad. Adapto el repertorio a cada evento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pedir canciones concretas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Necesito un par de semanas para prepararlas adecuadamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Llevas equipo de sonido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, equipo propio de alta calidad y potencia, contrastado en multitud de actuaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura una actuación?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo habitual es entre 90 y 120 minutos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué zonas trabajas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tengo base en Madrid y Cádiz, y me desplazo a Sevilla, Málaga y Huelva. En desplazamientos largos puede aplicarse un recargo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tocas al aire libre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Solo necesito una toma de corriente y, a ser posible, algo de sombra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con cuánta antelación hay que reservar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuanto antes mejor, pero me adapto a las urgencias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta contratarte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde 500 €, según cada evento. Contacta conmigo y te preparo un presupuesto sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tocas también con banda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Entre otros proyectos, con «Y sin embargo…», espectáculo homenaje a Joaquín Sabina; «Distractions» y «Shangri-la Social Band»."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -832,6 +966,7 @@
       <li><a href="#videos">Vídeos</a></li>
       <li><a href="#bandas">Bandas</a></li>
       <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#faq">Preguntas</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="/en/" class="nav-lang" aria-label="English version">EN</a></li>
     </ul>
@@ -846,6 +981,7 @@
     <a href="#videos" class="mobile-link">Vídeos</a>
     <a href="#bandas" class="mobile-link">Bandas</a>
     <a href="#agenda" class="mobile-link">Agenda</a>
+    <a href="#faq" class="mobile-link">Preguntas</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
     <a href="/en/" class="mobile-link nav-lang" aria-label="English version">🇬🇧 English</a>
   </div>
@@ -885,7 +1021,7 @@
           Llevo muchos años poniendo música en momentos que no se olvidan. <strong>Bodas, eventos corporativos, terrazas, restaurantes</strong> — el saxofón tiene algo que transforma cualquier espacio.
         </p>
         <p class="reveal reveal-delay-3">
-          Toco saxo tenor con un repertorio que va del <strong>Soul y el Jazz al Blues, el Rock, el Pop y el House</strong>, adaptado siempre a lo que tu evento necesita. Tengo base en Madrid y Cádiz, y me desplazo a Sevilla, Málaga y Huelva.
+          Toco saxo tenor con un repertorio que va del <strong>Soul y el Jazz al Blues, el Rock, el Pop, las baladas y el House</strong>, adaptado siempre a lo que tu evento necesita. Tengo base en Madrid y Cádiz, y me desplazo a Sevilla, Málaga y Huelva.
         </p>
         <a href="https://www.musiqua.es/band/fercandel-29771" target="_blank" rel="noopener" class="musiqua-link reveal reveal-delay-4">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -961,6 +1097,57 @@
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="agenda-frame-wrap reveal reveal-delay-2">
         <iframe src="https://calendar.google.com/calendar/embed?src=fercandelmusic%40gmail.com&src=71ed93eae2a5fcd4f8b1b172d97102fd3604e29f273d83c3d7d4e1ea3e3e0c59%40group.calendar.google.com&ctz=Europe%2FMadrid&bgcolor=%230d1420&color=%235298E8&color=%23E67C73&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=2" title="Agenda Fer Candel" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="faq-inner">
+      <p class="section-label reveal">Dudas habituales</p>
+      <h2 class="section-title reveal reveal-delay-1">Preguntas frecuentes</h2>
+      <div class="section-divider reveal reveal-delay-2"></div>
+      <div class="faq-list reveal reveal-delay-2">
+        <details class="faq-item">
+          <summary>¿Para qué tipo de eventos puedo contratarte?</summary>
+          <p>Bodas (ceremonia y cóctel), eventos corporativos, hoteles, restaurantes y terrazas.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué música tocas?</summary>
+          <p>Soul, Jazz, Blues, Rock, Pop, baladas y House, con saxo tenor y bases musicales de alta calidad. Adapto el repertorio a cada evento.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo pedir canciones concretas?</summary>
+          <p>Sí. Necesito un par de semanas para prepararlas adecuadamente.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Llevas equipo de sonido?</summary>
+          <p>Sí, equipo propio de alta calidad y potencia, contrastado en multitud de actuaciones.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto dura una actuación?</summary>
+          <p>Lo habitual es entre 90 y 120 minutos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿En qué zonas trabajas?</summary>
+          <p>Tengo base en Madrid y Cádiz, y me desplazo a Sevilla, Málaga y Huelva. En desplazamientos largos puede aplicarse un recargo.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Tocas al aire libre?</summary>
+          <p>Sí. Solo necesito una toma de corriente y, a ser posible, algo de sombra.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Con cuánta antelación hay que reservar?</summary>
+          <p>Cuanto antes mejor, pero me adapto a las urgencias.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cuánto cuesta contratarte?</summary>
+          <p>Desde 500 €, según cada evento. <a href="#contacto">Contacta conmigo</a> y te preparo un presupuesto sin compromiso.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Tocas también con banda?</summary>
+          <p>Sí. Entre otros proyectos, con «Y sin embargo…», espectáculo homenaje a Joaquín Sabina; «Distractions» y «Shangri-la Social Band».</p>
+        </details>
       </div>
     </div>
   </section>

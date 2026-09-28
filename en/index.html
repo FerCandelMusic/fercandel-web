@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fer Candel · Saxophonist for Events</title>
-  <meta name="description" content="Professional saxophonist for weddings, corporate events, restaurants and terraces. Soul, Jazz, Blues, Rock, Pop and House. Madrid, Cádiz, Seville, Málaga and Huelva." />
+  <meta name="description" content="Professional saxophonist for weddings, corporate events, restaurants and terraces. Soul, Jazz, Blues, Rock, Pop, ballads and House. Madrid, Cádiz, Seville, Málaga and Huelva." />
   <meta name="keywords" content="saxophonist events, saxophonist weddings, saxophonist Madrid, saxophonist Cádiz, saxophonist Sevilla, saxophonist Málaga, saxophonist Huelva, Fer Candel, live saxophone" />
   <meta property="og:title" content="Fer Candel · Saxophonist for Events" />
   <meta property="og:description" content="Live music that transforms any event. Weddings, corporate, restaurants." />
@@ -579,6 +579,52 @@
     }
 
     /* ── CONTACTO ── */
+    /* ── FAQ ── */
+    #faq {
+      background: var(--dark2);
+      border-top: 1px solid rgba(82,152,232,0.12);
+    }
+    .faq-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-list { border-top: 1px solid rgba(82,152,232,0.15); }
+    .faq-item { border-bottom: 1px solid rgba(82,152,232,0.15); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--white);
+      transition: color 0.2s ease;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item summary:hover,
+    .faq-item summary:focus-visible { color: var(--accent); outline: none; }
+    .faq-item p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      padding: 0 2.5rem 1.5rem 0;
+      margin: 0;
+    }
+    .faq-item p a { color: var(--accent); text-decoration: none; }
+    .faq-item p a:hover { text-decoration: underline; }
+
     #contacto {
       background: var(--dark2);
       position: relative;
@@ -809,7 +855,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Saxophonist for events",
-        "description": "Live saxophone performances for weddings, corporate events, restaurants and terraces. Repertoire spanning Soul, Jazz, Blues, Rock, Pop and House.",
+        "description": "Live saxophone performances for weddings, corporate events, restaurants and terraces. Repertoire spanning Soul, Jazz, Blues, Rock, Pop, ballads and House.",
         "areaServed": [
           { "@type": "City", "name": "Madrid" },
           { "@type": "City", "name": "Cádiz" },
@@ -820,6 +866,94 @@
       }
     }
   }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What kind of events can I book you for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings (ceremony and cocktail hour), corporate events, hotels, restaurants and terraces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What music do you play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Soul, Jazz, Blues, Rock, Pop, ballads and House, on tenor saxophone with high-quality backing tracks. I tailor the repertoire to each event."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I request specific songs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I need a couple of weeks to prepare them properly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you bring your own sound system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, my own high-quality, powerful sound system, proven at many performances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is a performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually between 90 and 120 minutes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you perform?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I'm based in Madrid and Cádiz, and I travel to Seville, Málaga and Huelva. A surcharge may apply for long-distance travel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you play outdoors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. I just need a power outlet and, if possible, some shade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far in advance should I book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The sooner the better, but I can accommodate last-minute requests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From €500, depending on the event. Get in touch and I'll prepare a no-obligation quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you also play with a band?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions” and “Shangri-la Social Band”."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -832,6 +966,7 @@
       <li><a href="#videos">Videos</a></li>
       <li><a href="#bandas">Bands</a></li>
       <li><a href="#agenda">Schedule</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contact</a></li>
       <li><a href="/" class="nav-lang" aria-label="Versión en español">ES</a></li>
     </ul>
@@ -846,6 +981,7 @@
     <a href="#videos" class="mobile-link">Videos</a>
     <a href="#bandas" class="mobile-link">Bands</a>
     <a href="#agenda" class="mobile-link">Schedule</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
     <a href="#contacto" class="mobile-link">Contact</a>
     <a href="/" class="mobile-link nav-lang" aria-label="Versión en español">🇪🇸 Español</a>
   </div>
@@ -885,7 +1021,7 @@
           I've spent many years bringing music to unforgettable moments. <strong>Weddings, corporate events, terraces, restaurants</strong> — the saxophone has something that transforms any space.
         </p>
         <p class="reveal reveal-delay-3">
-          I play tenor saxophone with a repertoire ranging from <strong>Soul and Jazz to Blues, Rock, Pop and House</strong>, always tailored to what your event needs. I'm based in Madrid and Cádiz, and I travel to Seville, Málaga and Huelva.
+          I play tenor saxophone with a repertoire ranging from <strong>Soul and Jazz to Blues, Rock, Pop, ballads and House</strong>, always tailored to what your event needs. I'm based in Madrid and Cádiz, and I travel to Seville, Málaga and Huelva.
         </p>
         <a href="https://www.musiqua.es/band/fercandel-29771" target="_blank" rel="noopener" class="musiqua-link reveal reveal-delay-4">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -961,6 +1097,57 @@
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="agenda-frame-wrap reveal reveal-delay-2">
         <iframe src="https://calendar.google.com/calendar/embed?src=fercandelmusic%40gmail.com&src=71ed93eae2a5fcd4f8b1b172d97102fd3604e29f273d83c3d7d4e1ea3e3e0c59%40group.calendar.google.com&ctz=Europe%2FMadrid&bgcolor=%230d1420&color=%235298E8&color=%23E67C73&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&wkst=2" title="Agenda Fer Candel" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="faq-inner">
+      <p class="section-label reveal">Common questions</p>
+      <h2 class="section-title reveal reveal-delay-1">FAQ</h2>
+      <div class="section-divider reveal reveal-delay-2"></div>
+      <div class="faq-list reveal reveal-delay-2">
+        <details class="faq-item">
+          <summary>What kind of events can I book you for?</summary>
+          <p>Weddings (ceremony and cocktail hour), corporate events, hotels, restaurants and terraces.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What music do you play?</summary>
+          <p>Soul, Jazz, Blues, Rock, Pop, ballads and House, on tenor saxophone with high-quality backing tracks. I tailor the repertoire to each event.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I request specific songs?</summary>
+          <p>Yes. I need a couple of weeks to prepare them properly.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you bring your own sound system?</summary>
+          <p>Yes, my own high-quality, powerful sound system, proven at many performances.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long is a performance?</summary>
+          <p>Usually between 90 and 120 minutes.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where do you perform?</summary>
+          <p>I&#x27;m based in Madrid and Cádiz, and I travel to Seville, Málaga and Huelva. A surcharge may apply for long-distance travel.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you play outdoors?</summary>
+          <p>Yes. I just need a power outlet and, if possible, some shade.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How far in advance should I book?</summary>
+          <p>The sooner the better, but I can accommodate last-minute requests.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How much does it cost?</summary>
+          <p>From €500, depending on the event. <a href="#contacto">Get in touch</a> and I&#x27;ll prepare a no-obligation quote.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you also play with a band?</summary>
+          <p>Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions” and “Shangri-la Social Band”.</p>
+        </details>
       </div>
     </div>
   </section>
