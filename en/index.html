@@ -19,6 +19,9 @@
   <link rel="alternate" hreflang="es" href="https://fercandel.com/" />
   <link rel="alternate" hreflang="en" href="https://fercandel.com/en/" />
   <link rel="alternate" hreflang="x-default" href="https://fercandel.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="ai-catalog" type="application/json" href="/.well-known/ai-catalog.json" />
+  <link rel="alternate" type="text/plain" title="AI summary (llms.txt)" href="https://fercandel.com/llms.txt" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet" />
@@ -821,22 +824,70 @@
     gtag('config', 'G-24207WVZ22');
   </script>
 
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://fercandel.com/en/#web",
+    "url": "https://fercandel.com/en/",
+    "name": "Fer Candel · Saxophonist for Events",
+    "inLanguage": "en",
+    "publisher": {
+      "@id": "https://fercandel.com/#fer"
+    }
+  }
+  </script>
   <!-- Structured data (Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://fercandel.com/#fer",
     "name": "Fer Candel",
     "jobTitle": "Professional Saxophonist",
     "url": "https://fercandel.com/en/",
     "image": "https://fercandel.com/assets/img/00_original_encuadrada.jpg",
     "telephone": "+34 600 907 538",
     "email": "fercandelmusic@gmail.com",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Bookings",
+      "email": "fercandelmusic@gmail.com",
+      "telephone": "+34 600 907 538",
+      "availableLanguage": ["es", "en"]
+    },
     "sameAs": [
       "https://www.instagram.com/fercandelmusic/",
       "https://www.facebook.com/FerCandelMusic",
       "https://www.youtube.com/@fercandelmusic",
       "https://www.musiqua.es/band/fercandel-29771"
+    ],
+    "memberOf": [
+      {
+        "@type": "MusicGroup",
+        "name": "Y sin embargo... Sabina",
+        "description": "Music-theatre tribute show to Joaquín Sabina, with reinterpreted songs and narrated texts.",
+        "image": "https://fercandel.com/assets/img/YSinEmbargoSabina.jpeg",
+        "url": "https://ysinembargoespectaculo.com"
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Distractions",
+        "description": "Original music-theatre show Doggie Luck, inspired by the Wild West.",
+        "image": "https://fercandel.com/assets/img/Distractions_DoggieLuck.jpeg"
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Shangri-la Social Band",
+        "description": "Dance band playing Swing, Rock, Blues, Pop and Jazz classics in Los Molinos, Madrid.",
+        "image": "https://fercandel.com/assets/img/ShangrilaSocialBand.jpeg"
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Rosci Neuence",
+        "description": "Madrid-based Spanish pop band with original songs.",
+        "image": "https://fercandel.com/assets/img/RosciNeuence.jpeg"
+      }
     ],
     "address": [
       {
@@ -950,7 +1001,7 @@
       "name": "Do you also play with a band?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions” and “Shangri-la Social Band”."
+        "text": "Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions”; “Shangri-la Social Band” and “Rosci Neuence”, a Madrid-based Spanish pop band with original songs."
       }
     }
   ]
@@ -1066,24 +1117,31 @@
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="bandas-grid">
         <div class="banda-card reveal reveal-delay-1">
-          <img src="../assets/img/YSinEmbargoSabina.jpeg" alt="Y sin embargo... Sabina" loading="lazy" />
+          <img src="../assets/img/YSinEmbargoSabina.jpeg" alt="Y sin embargo... Sabina: tribute show to Joaquín Sabina with Fer Candel on saxophone" loading="lazy" />
           <div class="banda-overlay">
             <p class="banda-nombre">Y sin embargo... Sabina</p>
             <p class="banda-desc">A music-theatre show in the Cádiz region paying tribute to Joaquín Sabina. Includes reinterpreted songs and narrated texts by the author.</p>
           </div>
         </div>
         <div class="banda-card reveal reveal-delay-2">
-          <img src="../assets/img/Distractions_DoggieLuck.jpeg" alt="Distractions" loading="lazy" />
+          <img src="../assets/img/Distractions_DoggieLuck.jpeg" alt="Distractions: Doggie Luck music-theatre show in Madrid" loading="lazy" />
           <div class="banda-overlay">
             <p class="banda-nombre">Distractions</p>
             <p class="banda-desc">Music-theatre show Doggie Luck, a musical story inspired by Wild West adventures. An original production touring Madrid.</p>
           </div>
         </div>
         <div class="banda-card reveal reveal-delay-3">
-          <img src="../assets/img/ShangrilaSocialBand.jpeg" alt="Shangri-la Social Band" loading="lazy" />
+          <img src="../assets/img/ShangrilaSocialBand.jpeg" alt="Shangri-la Social Band: swing, rock, blues, pop and jazz band in Los Molinos, Madrid" loading="lazy" />
           <div class="banda-overlay">
             <p class="banda-nombre">Shangri-la Social Band</p>
             <p class="banda-desc">We get you dancing with classics from Swing, Rock, Blues, Pop and Jazz. We play at our home venue 'Shangri-la' in Los Molinos, Madrid.</p>
+          </div>
+        </div>
+        <div class="banda-card reveal reveal-delay-4">
+          <img src="../assets/img/RosciNeuence.jpeg" alt="Rosci Neuence live: Madrid-based Spanish pop band with Fer Candel on saxophone" loading="lazy" />
+          <div class="banda-overlay">
+            <p class="banda-nombre">Rosci Neuence</p>
+            <p class="banda-desc">Madrid-based Spanish pop band with original songs.</p>
           </div>
         </div>
       </div>
@@ -1147,7 +1205,7 @@
         </details>
         <details class="faq-item">
           <summary>Do you also play with a band?</summary>
-          <p>Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions” and “Shangri-la Social Band”.</p>
+          <p>Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions”; “Shangri-la Social Band” and “Rosci Neuence”, a Madrid-based Spanish pop band with original songs.</p>
         </details>
       </div>
     </div>
@@ -1291,6 +1349,35 @@
       });
     }, { threshold: 0.05 });
     revealEls.forEach(el => observer.observe(el));
+  </script>
+  <script>
+  /* ── WebMCP: tools for in-browser AI assistants ── */
+  (function () {
+    const mc = (navigator && navigator.modelContext) || document.modelContext;
+    if (!mc || typeof mc.registerTool !== 'function') return;
+    const texto = t => ({ content: [{ type: 'text', text: t }] });
+    try {
+      mc.registerTool({
+        name: 'services_and_prices',
+        description: 'Fer Candel saxophonist services: event types, repertoire, set length, areas and starting price.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => texto('Events: weddings (ceremony and cocktail), corporate, hotels, restaurants and terraces.\nRepertoire: Soul, Jazz, Blues, Rock, Pop, ballads and House (live tenor sax).\nUsual set: 90–120 min. Own sound system.\nAreas: Madrid and Cádiz; travels to Seville, Málaga and Huelva.\nPrice: from €500 depending on the event.')
+      });
+      mc.registerTool({
+        name: 'booking_contact',
+        description: 'How to book Fer Candel or check availability: email, WhatsApp and social media.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => texto('Email: fercandelmusic@gmail.com\nWhatsApp/phone: +34 600 907 538\nCalendar: https://fercandel.com/en/#agenda\nSocial: @fercandelmusic (Instagram, Facebook, YouTube)')
+      });
+      mc.registerTool({
+        name: 'bands_and_projects',
+        description: 'Bands and projects Fer Candel plays with.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => texto([...document.querySelectorAll('#bandas .banda-card')].map(c =>
+          (c.querySelector('.banda-nombre')?.textContent.trim() || '') + ': ' + (c.querySelector('.banda-desc')?.textContent.trim() || '')).join('\n'))
+      });
+    } catch (e) { console.warn('WebMCP', e); }
+  })();
   </script>
 </body>
 </html>

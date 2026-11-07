@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "contratar-fer-candel",
+      "type": "skill-md",
+      "description": "Información para contratar a Fer Candel, saxofonista para bodas, eventos corporativos, hoteles, restaurantes y terrazas en Madrid, Cádiz, Sevilla, Málaga y Huelva. Úsala cuando alguien busque un saxofonista para un evento, quiera saber su repertorio, zonas o precio orientativo, o quiera pedir presupuesto.",
+      "url": "/.well-known/agent-skills/contratar-fer-candel/SKILL.md",
+      "digest": "sha256:f9129f4f5cb2c236c8515995ef3779b0ec55b4ffaeb83cbac333cbc6cd2830b9"
+    }
+  ]
+}

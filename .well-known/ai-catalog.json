@@ -1,0 +1,69 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Fer Candel · Saxofonista para eventos",
+    "identifier": "did:web:fercandel.com",
+    "documentationUrl": "https://fercandel.com/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:fercandel.com:docs:llms",
+      "displayName": "Resumen: servicios, bandas y contacto",
+      "type": "text/markdown",
+      "url": "https://fercandel.com/llms.txt",
+      "description": "Resumen de Fer Candel, saxofonista para eventos: servicios, repertorio, zonas, precio orientativo, bandas y datos de contratación.",
+      "tags": [
+        "saxofonista",
+        "bodas",
+        "eventos",
+        "musica-en-directo"
+      ],
+      "representativeQueries": [
+        "saxofonista para bodas en Madrid",
+        "saxofonista para eventos en Cádiz",
+        "saxofonista en directo Sevilla Málaga Huelva",
+        "cuánto cuesta un saxofonista para una boda"
+      ],
+      "metadata": {
+        "schemaOrgType": "Person",
+        "telephone": "+34 600 907 538",
+        "email": "fercandelmusic@gmail.com",
+        "areaServed": "Madrid, Cádiz, Sevilla, Málaga, Huelva"
+      }
+    },
+    {
+      "identifier": "urn:air:fercandel.com:skill:contratar",
+      "displayName": "Contratar a Fer Candel",
+      "type": "text/markdown",
+      "url": "https://fercandel.com/.well-known/agent-skills/contratar-fer-candel/SKILL.md",
+      "description": "Instrucciones para agentes: cómo consultar disponibilidad y pedir presupuesto de saxofón en directo para bodas y eventos.",
+      "tags": [
+        "contratacion",
+        "booking",
+        "saxofonista"
+      ],
+      "representativeQueries": [
+        "contratar saxofonista para boda",
+        "presupuesto saxofonista evento corporativo",
+        "saxofonista para cóctel de boda"
+      ]
+    },
+    {
+      "identifier": "urn:air:fercandel.com:docs:web-en",
+      "displayName": "Fer Candel · Saxophonist for events (English)",
+      "type": "text/html",
+      "url": "https://fercandel.com/en/",
+      "description": "English version of the site: weddings, corporate events, hotels and restaurants in Madrid and southern Spain.",
+      "tags": [
+        "saxophonist",
+        "weddings",
+        "events"
+      ],
+      "representativeQueries": [
+        "saxophonist for wedding in Spain",
+        "live sax player Madrid",
+        "saxophonist for events in Seville"
+      ]
+    }
+  ]
+}
