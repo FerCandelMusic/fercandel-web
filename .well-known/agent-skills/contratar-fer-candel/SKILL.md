@@ -22,7 +22,8 @@ El calendario público está en https://fercandel.com/#agenda. Para confirmar un
 
 ## Pedir presupuesto
 
-- Email: fercandelmusic@gmail.com
+- Formulario: https://fercandel.com/#contacto
+- Email: info@fercandel.com
 - WhatsApp / teléfono: +34 600 907 538
 
 Indica fecha, localidad, tipo de evento, espacio (interior o exterior) y duración aproximada.
