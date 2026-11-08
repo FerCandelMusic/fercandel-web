@@ -24,19 +24,11 @@ Toco saxo tenor con un repertorio que va del Soul y el Jazz al Blues, el Rock, e
 
 - [Reproducir: Fer Candel - Atardeceres de relax](https://www.youtube.com/watch?v=Eb_05zrU0Fg)
 
-Fer Candel - Atardeceres de relax
-
-- [Reproducir: If I Ain't Got You (Alicia Keys)](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
-
-If I Ain't Got You (Alicia Keys)
+[If I Ain't Got You (Alicia Keys)](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
 
 - [Reproducir: Fer Candel - Georgia on my mind](https://www.youtube.com/watch?v=ro2ZzNYs15o)
 
-Fer Candel - Georgia on my mind
-
 - [Reproducir: Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024](https://www.youtube.com/watch?v=hOYuYchvX_o)
-
-Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024
 
 ## Bandas y proyectos
 
