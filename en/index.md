@@ -94,7 +94,7 @@ From €500, depending on the event. [Get in touch](https://fercandel.com/en/#co
 
 Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaquín Sabina; “Distractions”; “Shangri-la Social Band” and “Rosci Neuence”, a Madrid-based Spanish pop band with original songs.
 
-## Let's talk
+## Contact
 
 **Phone:** [600 907 538](tel:+34600907538)
 

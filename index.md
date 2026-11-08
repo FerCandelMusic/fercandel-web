@@ -94,7 +94,7 @@ Desde 500 €, según cada evento. [Contacta conmigo](https://fercandel.com/#con
 
 Sí. Entre otros proyectos, con «Y sin embargo…», espectáculo homenaje a Joaquín Sabina; «Distractions»; «Shangri-la Social Band» y «Rosci Neuence», banda madrileña de pop español con repertorio propio.
 
-## Hablemos
+## Contacto
 
 **Teléfono:** [600 907 538](tel:+34600907538)
 
