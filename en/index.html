@@ -1476,7 +1476,7 @@
       for (var i = 0; i < 40 && !token; i++) await new Promise(function (r) { setTimeout(r, 250); });
       d.turnstile = token;
       try {
-        var r = await fetch('/api/contacto', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) });
+        var r = await fetch('https://fercandel-contacto.fercandelmusic.workers.dev/', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) });
         var j = await r.json().catch(function () { return {}; });
         if (r.ok && j.ok) { form.reset(); msg('Thank you! I\'ve received your enquiry and will reply as soon as possible.', 'ok'); }
         else msg('It couldn\'t be sent. Message me on WhatsApp or at info@fercandel.com.', 'err');
