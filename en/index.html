@@ -774,6 +774,62 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── VÍDEOS: miniatura hasta pulsar (youtube-nocookie) ── */
+    .video-facade {
+      position: absolute; inset: 0;
+      display: block; cursor: pointer;
+      background: #000;
+    }
+    .video-facade img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      opacity: 0.85; transition: opacity 0.3s;
+    }
+    .video-facade:hover img { opacity: 1; }
+    .video-facade::after {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      width: 64px; height: 64px; margin: -32px 0 0 -32px;
+      border-radius: 50%;
+      background: rgba(8,12,18,0.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%235298E8' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/28px no-repeat;
+      border: 1px solid rgba(82,152,232,0.6);
+      transition: transform 0.25s, background-color 0.25s;
+    }
+    .video-facade:hover::after { transform: scale(1.08); background-color: rgba(8,12,18,0.9); }
+
+    /* ── PIE: enlaces legales ── */
+    footer { position: relative; z-index: 1; }
+    .footer-legal { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+    .footer-legal a, .footer-legal button {
+      font: inherit; font-size: 0.7rem; letter-spacing: 0.05em;
+      color: rgba(138,154,181,0.75); text-decoration: none;
+      background: none; border: 0; padding: 0; cursor: pointer;
+    }
+    .footer-legal a:hover, .footer-legal button:hover { color: var(--accent); }
+
+    /* ── AVISO DE COOKIES ── */
+    .cookie-bar {
+      position: fixed; left: 1rem; right: 1rem; bottom: 1rem; z-index: 2000;
+      max-width: 720px; margin: 0 auto;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 1rem 1.25rem;
+      background: rgba(13,20,32,0.97);
+      border: 1px solid rgba(82,152,232,0.3);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      font-size: 0.8rem; line-height: 1.5; color: var(--text);
+    }
+    .cookie-bar[hidden] { display: none; }
+    .cookie-bar p { flex: 1 1 280px; margin: 0; }
+    .cookie-bar a { color: var(--accent); }
+    .cookie-bar-btns { display: flex; gap: 0.6rem; }
+    .cookie-bar button {
+      font: inherit; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.55rem 1.1rem; cursor: pointer;
+      border: 1px solid var(--accent); background: transparent; color: var(--accent);
+    }
+    .cookie-bar button:hover { background: rgba(82,152,232,0.12); }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -815,13 +871,19 @@
       }
     }
   </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24207WVZ22"></script>
+  <!-- Google Analytics: solo se carga si el visitante acepta las cookies -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-24207WVZ22');
+    window.fcCargarGA = function () {
+      if (window.__fcGA) return; window.__fcGA = true;
+      var s = document.createElement('script');
+      s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-24207WVZ22';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', 'G-24207WVZ22', { anonymize_ip: true });
+    };
+    try { if (localStorage.getItem('fc-cookies') === 'si') window.fcCargarGA(); } catch (e) {}
   </script>
 
   <script type="application/ld+json">
@@ -1094,16 +1156,16 @@
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="videos-grid">
         <div class="video-item reveal reveal-delay-1">
-          <iframe src="https://www.youtube.com/embed/Eb_05zrU0Fg" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <a class="video-facade" href="https://www.youtube.com/watch?v=Eb_05zrU0Fg" data-yt="Eb_05zrU0Fg" aria-label="Play Fer Candel video 1 on YouTube"><img src="https://i.ytimg.com/vi/Eb_05zrU0Fg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
         <div class="video-item reveal reveal-delay-2">
-          <iframe src="https://www.youtube.com/embed/Mmhi4vZIyOE" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <a class="video-facade" href="https://www.youtube.com/watch?v=Mmhi4vZIyOE" data-yt="Mmhi4vZIyOE" aria-label="Play Fer Candel video 2 on YouTube"><img src="https://i.ytimg.com/vi/Mmhi4vZIyOE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
         <div class="video-item reveal reveal-delay-3">
-          <iframe src="https://www.youtube.com/embed/ro2ZzNYs15o" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <a class="video-facade" href="https://www.youtube.com/watch?v=ro2ZzNYs15o" data-yt="ro2ZzNYs15o" aria-label="Play Fer Candel video 3 on YouTube"><img src="https://i.ytimg.com/vi/ro2ZzNYs15o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
         <div class="video-item reveal reveal-delay-4">
-          <iframe src="https://www.youtube.com/embed/hOYuYchvX_o" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <a class="video-facade" href="https://www.youtube.com/watch?v=hOYuYchvX_o" data-yt="hOYuYchvX_o" aria-label="Play Fer Candel video 4 on YouTube"><img src="https://i.ytimg.com/vi/hOYuYchvX_o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
       </div>
     </div>
@@ -1262,8 +1324,14 @@
   <!-- ── FOOTER ── -->
   <footer>
     <span class="footer-brand">Fer <span>Candel</span> · Saxophonist</span>
+    <div class="footer-legal"><a href="/en/legal.html#legal-notice">Legal notice</a><a href="/en/legal.html#privacy">Privacy</a><a href="/en/legal.html#cookies">Cookies</a><button type="button" id="cookieConfig">Cookie settings</button></div>
     <span class="footer-copy">© 2026 fercandel.com</span>
   </footer>
+
+  <div class="cookie-bar" id="cookieBar" role="dialog" aria-label="Cookie notice" hidden>
+    <p>I use analytics cookies (Google Analytics) to understand how the site is used, only if you accept them. <a href="/en/legal.html#cookies">More information</a></p>
+    <div class="cookie-bar-btns"><button type="button" id="cookieNo">Reject</button><button type="button" id="cookieOk">Accept</button></div>
+  </div>
 
   <!-- ── JS ── -->
   <script>
@@ -1377,6 +1445,41 @@
           (c.querySelector('.banda-nombre')?.textContent.trim() || '') + ': ' + (c.querySelector('.banda-desc')?.textContent.trim() || '')).join('\n'))
       });
     } catch (e) { console.warn('WebMCP', e); }
+  })();
+  </script>
+  <script>
+  /* ── Vídeos: se carga YouTube (sin cookies) solo al pulsar ── */
+  document.querySelectorAll('.video-facade').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0';
+      f.title = a.getAttribute('aria-label');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      a.replaceWith(f);
+    });
+  });
+  /* ── Aviso de cookies ── */
+  (function () {
+    var bar = document.getElementById('cookieBar');
+    var leer = function () { try { return localStorage.getItem('fc-cookies'); } catch (e) { return null; } };
+    var guardar = function (v) { try { localStorage.setItem('fc-cookies', v); } catch (e) {} };
+    var borrarGA = function () {
+      document.cookie.split(';').forEach(function (c) {
+        var n = c.split('=')[0].trim();
+        if (/^_ga/.test(n)) ['', '; domain=.fercandel.com', '; domain=fercandel.com'].forEach(function (d) {
+          document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+        });
+      });
+    };
+    if (!leer()) bar.hidden = false;
+    document.getElementById('cookieOk').onclick = function () { guardar('si'); bar.hidden = true; window.fcCargarGA(); };
+    document.getElementById('cookieNo').onclick = function () {
+      var antes = leer(); guardar('no'); bar.hidden = true; borrarGA();
+      if (antes === 'si') location.reload();
+    };
+    document.getElementById('cookieConfig').onclick = function () { bar.hidden = false; };
   })();
   </script>
 </body>
