@@ -96,11 +96,33 @@ Sí. Entre otros proyectos, con «Y sin embargo…», espectáculo homenaje a Jo
 
 ## Contacto
 
-**Teléfono:** [600 907 538](tel:+34600907538)
+Pide presupuesto
 
-**Email:** [fercandelmusic@gmail.com](mailto:fercandelmusic@gmail.com)
+Cuéntame tu evento y te contesto lo antes posible.
 
-**Sígueme:**
+Nombre *
+
+Email o teléfono *
+
+Fecha del evento
+
+Lugar o ciudad
+
+Tipo de eventoElige una opciónBodaEvento corporativoHotel, restaurante o terrazaFiesta privadaOtro
+
+Mensaje
+
+Web
+
+He leído y acepto la [política de privacidad](https://fercandel.com/legal.html#privacidad).
+
+O si lo prefieres
+
+[Llamar 600 907 538](tel:+34600907538)
+[WhatsApp 600 907 538](https://wa.me/34600907538?text=Hola%20Fer%2C%20te%20escribo%20desde%20tu%20web.)
+[Email info@fercandel.com](mailto:info@fercandel.com?subject=Consulta%20para%20mi%20evento)
+Sígueme
+
 - [Instagram](https://www.instagram.com/fercandelmusic/)
 
 - [Facebook](https://www.facebook.com/FerCandelMusic)

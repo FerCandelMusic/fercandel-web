@@ -96,11 +96,33 @@ Yes. Among other projects, with “Y sin embargo…”, a tribute show to Joaqu�
 
 ## Contact
 
-**Phone:** [600 907 538](tel:+34600907538)
+Request a quote
 
-**Email:** [fercandelmusic@gmail.com](mailto:fercandelmusic@gmail.com)
+Tell me about your event and I'll get back to you as soon as possible.
 
-**Follow me:**
+Name *
+
+Email or phone *
+
+Event date
+
+Venue or city
+
+Type of eventChoose an optionWeddingCorporate eventHotel, restaurant or terracePrivate partyOther
+
+Message
+
+Web
+
+I have read and accept the [privacy policy](https://fercandel.com/en/legal.html#privacy).
+
+Or if you prefer
+
+[Call 600 907 538](tel:+34600907538)
+[WhatsApp 600 907 538](https://wa.me/34600907538?text=Hi%20Fer%2C%20I%27m%20writing%20from%20your%20website.)
+[Email info@fercandel.com](mailto:info@fercandel.com?subject=Enquiry%20about%20my%20event)
+Follow me
+
 - [Instagram](https://www.instagram.com/fercandelmusic/)
 
 - [Facebook](https://www.facebook.com/FerCandelMusic)
