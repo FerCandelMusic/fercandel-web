@@ -22,13 +22,21 @@ I play tenor saxophone with a repertoire ranging from Soul and Jazz to Blues, Ro
 
 ## Videos
 
-- [Play Fer Candel video 1 on YouTube](https://www.youtube.com/watch?v=Eb_05zrU0Fg)
+- [Play: Fer Candel - Atardeceres de relax](https://www.youtube.com/watch?v=Eb_05zrU0Fg)
 
-- [Play Fer Candel video 2 on YouTube](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
+Fer Candel - Atardeceres de relax
 
-- [Play Fer Candel video 3 on YouTube](https://www.youtube.com/watch?v=ro2ZzNYs15o)
+- [Play: If I Ain't Got You (Alicia Keys)](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
 
-- [Play Fer Candel video 4 on YouTube](https://www.youtube.com/watch?v=hOYuYchvX_o)
+If I Ain't Got You (Alicia Keys)
+
+- [Play: Fer Candel - Georgia on my mind](https://www.youtube.com/watch?v=ro2ZzNYs15o)
+
+Fer Candel - Georgia on my mind
+
+- [Play: Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024](https://www.youtube.com/watch?v=hOYuYchvX_o)
+
+Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024
 
 ## Bands & projects
 
