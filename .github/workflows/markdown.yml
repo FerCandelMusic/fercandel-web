@@ -1,0 +1,152 @@
+name: Versión Markdown para agentes de IA
+
+# Genera index.md y en/index.md a partir de index.html y en/index.html.
+# Cloudflare sirve esos .md a los agentes que piden "Accept: text/markdown".
+# Se ejecuta solo en cada push que cambie la web (y a mano con "Run workflow").
+
+on:
+  push:
+    branches: [main]
+    paths: ["index.html", "en/index.html", ".github/workflows/markdown.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Generar index.md y en/index.md
+        run: |
+          cat > /tmp/generar-markdown.mjs <<'FIN_SCRIPT'
+          #!/usr/bin/env node
+          /**
+           * Genera index.md y en/index.md a partir de index.html y en/index.html.
+           * Cloudflare sirve esos .md a los agentes de IA que piden "Accept: text/markdown".
+           * Lo ejecuta la GitHub Action .github/workflows/markdown.yml en cada push.
+           */
+          import fs from "node:fs";
+
+          // ───────────────────────── Conversión HTML → Markdown ─────────────────────────
+
+          function decodificarEntidades(t) {
+            const nombres = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", euro: "€", laquo: "«", raquo: "»", hellip: "…", mdash: "—", ndash: "–" };
+            return t
+              .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+              .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(parseInt(d, 10)))
+              .replace(/&([a-z]+);/gi, (m, n) => nombres[n.toLowerCase()] ?? m);
+          }
+
+          // Cloudflare puede ofuscar los emails (Scrape Shield): los descodificamos.
+          function descifrarEmailCF(hex) {
+            const clave = parseInt(hex.substr(0, 2), 16);
+            let s = "";
+            for (let i = 2; i < hex.length; i += 2) s += String.fromCharCode(parseInt(hex.substr(i, 2), 16) ^ clave);
+            return s;
+          }
+
+          function htmlAMarkdown(html, url) {
+            const base = url.origin + url.pathname;
+            const meta = (n) => {
+              const m = html.match(new RegExp(`<meta[^>]+(?:name|property)="${n}"[^>]+content="([^"]*)"`, "i"));
+              return m ? decodificarEntidades(m[1]) : "";
+            };
+            const titulo = decodificarEntidades((html.match(/<title>([\s\S]*?)<\/title>/i) || [, "Fer Candel"])[1].trim());
+            const descripcion = meta("description");
+
+            let h = (html.match(/<main[\s\S]*?<\/main>/i) || [html])[0];
+
+            // Emails ofuscados por Cloudflare
+            h = h.replace(/<(?:span|a)[^>]*data-cfemail="([0-9a-f]+)"[^>]*>[\s\S]*?<\/(?:span|a)>/gi, (_, hex) => descifrarEmailCF(hex));
+            h = h.replace(/href="\/cdn-cgi\/l\/email-protection#([0-9a-f]+)"/gi, (_, hex) => `href="mailto:${descifrarEmailCF(hex)}"`);
+
+            // Fuera lo que no es contenido
+            h = h.replace(/<!--[\s\S]*?-->/g, "")
+                 .replace(/<(script|style|svg|noscript|button)[\s\S]*?<\/\1>/gi, "")
+                 .replace(/<img[^>]*>/gi, "");
+
+            // Vídeos de YouTube y calendario
+            h = h.replace(/<iframe[^>]*src="https:\/\/www\.youtube(?:-nocookie)?\.com\/embed\/([\w-]+)[^"]*"[^>]*>[\s\S]*?<\/iframe>/gi,
+                          (_, id) => `\n- https://www.youtube.com/watch?v=${id}\n`);
+            h = h.replace(/<iframe[^>]*src="(https:\/\/calendar\.google\.com[^"]*)"[^>]*>[\s\S]*?<\/iframe>/gi,
+                          (_, src) => `\n[Calendario / Calendar](${decodificarEntidades(src)})\n`);
+            h = h.replace(/<iframe[\s\S]*?<\/iframe>/gi, "");
+
+            // Etiquetas de sección decorativas
+            h = h.replace(/<p[^>]*class="[^"]*section-label[^"]*"[^>]*>[\s\S]*?<\/p>/gi, "");
+
+            // Enlaces
+            h = h.replace(/<a\s([^>]*)href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>/gi, (_, a1, href, a2, txt) => {
+              const etiqueta = ((a1 + a2).match(/aria-label="([^"]*)"/i) || [, ""])[1];
+              const texto = txt.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim() || etiqueta;
+              if (!texto) return "";
+              let destino = decodificarEntidades(href);
+              if (destino.startsWith("#")) destino = base + destino;
+              else if (destino.startsWith("/")) destino = url.origin + destino;
+              return etiqueta && !txt.replace(/<[^>]+>/g, "").trim() ? `\n- [${texto}](${destino})\n` : `[${texto}](${destino})`;
+            });
+
+            // Estructura
+            h = h.replace(/<br\s*\/?>/gi, " ")
+                 .replace(/<h1[^>]*>([\s\S]*?)<\/h1>/gi, "\n\n# $1\n\n")
+                 .replace(/<h2[^>]*>([\s\S]*?)<\/h2>/gi, "\n\n## $1\n\n")
+                 .replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi, "\n\n### $1\n\n")
+                 .replace(/<p[^>]*class="[^"]*banda-nombre[^"]*"[^>]*>([\s\S]*?)<\/p>/gi, "\n\n### $1\n\n")
+                 .replace(/<summary[^>]*>([\s\S]*?)<\/summary>/gi, "\n\n### $1\n\n")
+                 .replace(/<[^>]*class="[^"]*contacto-item-label[^"]*"[^>]*>([\s\S]*?)<\/(?:span|p)>/gi, "\n\n**$1:** ")
+                 .replace(/<li[^>]*>/gi, "\n- ")
+                 .replace(/<\/(p|div|section|details|li|ul|ol|header|article)>/gi, "\n\n")
+                 .replace(/<[^>]+>/g, "");
+
+            // Limpieza de espacios y líneas repetidas
+            const lineas = decodificarEntidades(h)
+              .replace(/(\*\*[^*\n]+:\*\*)\s*\n\s*(?!- )/g, "$1 ")
+              .split("\n")
+              .map((l) => l.replace(/[ \t]+/g, " ").trim());
+            const salida = [];
+            const vistas = new Set();
+            for (const l of lineas) {
+              if (!l) { if (salida.length && salida[salida.length - 1] !== "") salida.push(""); continue; }
+              // Clave para detectar repetidos: el texto visible, sin etiquetas ni destino de enlaces
+              const clave = l.replace(/^\*\*[^*]+\*\*\s*/, "").replace(/\]\([^)]*\)/g, "]");
+              if (clave && !l.startsWith("#") && vistas.has(clave)) continue;
+              vistas.add(clave);
+              salida.push(l);
+            }
+            const cuerpo = salida.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+
+            return [
+              "---",
+              `title: ${JSON.stringify(titulo)}`,
+              `description: ${JSON.stringify(descripcion)}`,
+              `url: ${base}`,
+              "---",
+              "",
+              cuerpo,
+              "",
+            ].join("\n");
+          }
+
+          const paginas = [
+            ["index.html", "index.md", "https://fercandel.com/"],
+            ["en/index.html", "en/index.md", "https://fercandel.com/en/"],
+          ];
+          for (const [html, md, url] of paginas) {
+            fs.writeFileSync(md, htmlAMarkdown(fs.readFileSync(html, "utf8"), new URL(url)));
+            console.log("OK", md);
+          }
+          FIN_SCRIPT
+          node /tmp/generar-markdown.mjs
+      - name: Guardar cambios
+        run: |
+          git add index.md en/index.md
+          if git diff --cached --quiet; then echo "Nada que actualizar"; exit 0; fi
+          git config user.name "Robot Markdown"
+          git config user.email "actions@github.com"
+          git commit -m "Actualización automática de la versión Markdown"
+          git push
