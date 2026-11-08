@@ -12,7 +12,7 @@ Una experiencia musical en vivo que transforma tu evento. Bodas, eventos corpora
 
 [Consulta disponibilidad](https://fercandel.com/#contacto)
 
-## Momentos que no se olvidan
+## Sobre mí
 
 Llevo muchos años poniendo música en momentos que no se olvidan. Bodas, eventos corporativos, terrazas, restaurantes — el saxofón tiene algo que transforma cualquier espacio.
 

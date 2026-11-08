@@ -12,7 +12,7 @@ A live musical experience that transforms your event. Weddings, corporate events
 
 [Check availability](https://fercandel.com/en/#contacto)
 
-## Moments you won't forget
+## About me
 
 I've spent many years bringing music to unforgettable moments. Weddings, corporate events, terraces, restaurants — the saxophone has something that transforms any space.
 
