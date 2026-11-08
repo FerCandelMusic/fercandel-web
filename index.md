@@ -22,13 +22,13 @@ Toco saxo tenor con un repertorio que va del Soul y el Jazz al Blues, el Rock, e
 
 ## Vídeos
 
-- https://www.youtube.com/watch?v=Eb_05zrU0Fg
+- [Reproducir vídeo 1 de Fer Candel en YouTube](https://www.youtube.com/watch?v=Eb_05zrU0Fg)
 
-- https://www.youtube.com/watch?v=Mmhi4vZIyOE
+- [Reproducir vídeo 2 de Fer Candel en YouTube](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
 
-- https://www.youtube.com/watch?v=ro2ZzNYs15o
+- [Reproducir vídeo 3 de Fer Candel en YouTube](https://www.youtube.com/watch?v=ro2ZzNYs15o)
 
-- https://www.youtube.com/watch?v=hOYuYchvX_o
+- [Reproducir vídeo 4 de Fer Candel en YouTube](https://www.youtube.com/watch?v=hOYuYchvX_o)
 
 ## Bandas y proyectos
 

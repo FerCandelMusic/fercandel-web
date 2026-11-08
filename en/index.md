@@ -22,13 +22,13 @@ I play tenor saxophone with a repertoire ranging from Soul and Jazz to Blues, Ro
 
 ## Videos
 
-- https://www.youtube.com/watch?v=Eb_05zrU0Fg
+- [Play Fer Candel video 1 on YouTube](https://www.youtube.com/watch?v=Eb_05zrU0Fg)
 
-- https://www.youtube.com/watch?v=Mmhi4vZIyOE
+- [Play Fer Candel video 2 on YouTube](https://www.youtube.com/watch?v=Mmhi4vZIyOE)
 
-- https://www.youtube.com/watch?v=ro2ZzNYs15o
+- [Play Fer Candel video 3 on YouTube](https://www.youtube.com/watch?v=ro2ZzNYs15o)
 
-- https://www.youtube.com/watch?v=hOYuYchvX_o
+- [Play Fer Candel video 4 on YouTube](https://www.youtube.com/watch?v=hOYuYchvX_o)
 
 ## Bands & projects
 
