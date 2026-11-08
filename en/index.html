@@ -775,12 +775,6 @@
     }
 
     /* ── VÍDEOS: miniatura hasta pulsar (youtube-nocookie) ── */
-    .video-wrap { display: flex; flex-direction: column; gap: 0.6rem; }
-    .video-title {
-      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em;
-      color: var(--text); line-height: 1.4;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.85);
-    }
     .video-facade {
       position: absolute; inset: 0;
       display: block; cursor: pointer;
@@ -792,6 +786,14 @@
       opacity: 0.85; transition: opacity 0.3s;
     }
     .video-facade:hover img { opacity: 1; }
+    .video-overlay-title {
+      position: absolute; top: 0; left: 0; right: 0;
+      padding: 1rem 1rem 2.5rem; text-align: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent);
+      color: #fff; font-size: clamp(1.1rem, 2.4vw, 1.7rem); font-weight: 400; letter-spacing: 0.02em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      pointer-events: none;
+    }
     .video-facade::after {
       content: '';
       position: absolute; top: 50%; left: 50%;
@@ -1161,29 +1163,17 @@
       <h2 class="section-title reveal reveal-delay-1">Videos</h2>
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="videos-grid">
-        <div class="video-wrap reveal reveal-delay-1">
-          <div class="video-item">
-            <a class="video-facade" href="https://www.youtube.com/watch?v=Eb_05zrU0Fg" data-yt="Eb_05zrU0Fg" aria-label="Play: Fer Candel - Atardeceres de relax"><img src="https://i.ytimg.com/vi/Eb_05zrU0Fg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
-          </div>
-          <p class="video-title">Fer Candel - Atardeceres de relax</p>
+        <div class="video-item reveal reveal-delay-1">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=Eb_05zrU0Fg" data-yt="Eb_05zrU0Fg" aria-label="Play: Fer Candel - Atardeceres de relax"><img src="https://i.ytimg.com/vi/Eb_05zrU0Fg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
-        <div class="video-wrap reveal reveal-delay-2">
-          <div class="video-item">
-            <a class="video-facade" href="https://www.youtube.com/watch?v=Mmhi4vZIyOE" data-yt="Mmhi4vZIyOE" aria-label="Play: If I Ain&#39;t Got You (Alicia Keys)"><img src="https://i.ytimg.com/vi/Mmhi4vZIyOE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
-          </div>
-          <p class="video-title">If I Ain&#39;t Got You (Alicia Keys)</p>
+        <div class="video-item reveal reveal-delay-2">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=Mmhi4vZIyOE" data-yt="Mmhi4vZIyOE" aria-label="Play: If I Ain&#39;t Got You (Alicia Keys)"><img src="https://i.ytimg.com/vi/Mmhi4vZIyOE/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="video-overlay-title">If I Ain&#39;t Got You (Alicia Keys)</span></a>
         </div>
-        <div class="video-wrap reveal reveal-delay-3">
-          <div class="video-item">
-            <a class="video-facade" href="https://www.youtube.com/watch?v=ro2ZzNYs15o" data-yt="ro2ZzNYs15o" aria-label="Play: Fer Candel - Georgia on my mind"><img src="https://i.ytimg.com/vi/ro2ZzNYs15o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
-          </div>
-          <p class="video-title">Fer Candel - Georgia on my mind</p>
+        <div class="video-item reveal reveal-delay-3">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=ro2ZzNYs15o" data-yt="ro2ZzNYs15o" aria-label="Play: Fer Candel - Georgia on my mind"><img src="https://i.ytimg.com/vi/ro2ZzNYs15o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
-        <div class="video-wrap reveal reveal-delay-4">
-          <div class="video-item">
-            <a class="video-facade" href="https://www.youtube.com/watch?v=hOYuYchvX_o" data-yt="hOYuYchvX_o" aria-label="Play: Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024"><img src="https://i.ytimg.com/vi/hOYuYchvX_o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
-          </div>
-          <p class="video-title">Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024</p>
+        <div class="video-item reveal reveal-delay-4">
+          <a class="video-facade" href="https://www.youtube.com/watch?v=hOYuYchvX_o" data-yt="hOYuYchvX_o" aria-label="Play: Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024"><img src="https://i.ytimg.com/vi/hOYuYchvX_o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
         </div>
       </div>
     </div>
