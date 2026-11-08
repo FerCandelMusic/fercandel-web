@@ -768,29 +768,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── VÍDEOS: miniatura hasta pulsar (youtube-nocookie) ── */
-    .video-facade {
-      position: absolute; inset: 0;
-      display: block; cursor: pointer;
-      background: #000;
-    }
-    .video-facade img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      opacity: 0.85; transition: opacity 0.3s;
-    }
-    .video-facade:hover img { opacity: 1; }
-    .video-facade::after {
-      content: '';
-      position: absolute; top: 50%; left: 50%;
-      width: 64px; height: 64px; margin: -32px 0 0 -32px;
-      border-radius: 50%;
-      background: rgba(8,12,18,0.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%235298E8' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/28px no-repeat;
-      border: 1px solid rgba(82,152,232,0.6);
-      transition: transform 0.25s, background-color 0.25s;
-    }
-    .video-facade:hover::after { transform: scale(1.08); background-color: rgba(8,12,18,0.9); }
-
     /* ── PIE: enlaces legales ── */
     footer { position: relative; z-index: 1; }
     .footer-legal { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
@@ -1151,16 +1128,16 @@
       <div class="section-divider reveal reveal-delay-2"></div>
       <div class="videos-grid">
         <div class="video-item reveal reveal-delay-1">
-          <a class="video-facade" href="https://www.youtube.com/watch?v=Eb_05zrU0Fg" data-yt="Eb_05zrU0Fg" aria-label="Play: Fer Candel - Atardeceres de relax"><img src="https://i.ytimg.com/vi/Eb_05zrU0Fg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
+          <iframe src="https://www.youtube.com/embed/Eb_05zrU0Fg" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-item reveal reveal-delay-2">
-          <a class="video-facade" href="https://www.youtube.com/watch?v=Mmhi4vZIyOE" data-yt="Mmhi4vZIyOE" aria-label="Play: If I Ain&#39;t Got You (Alicia Keys)"><img src="https://i.ytimg.com/vi/Mmhi4vZIyOE/hqdefault.jpg?v=2" alt="" loading="lazy" width="480" height="360" /></a>
+          <iframe src="https://www.youtube.com/embed/Mmhi4vZIyOE" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-item reveal reveal-delay-3">
-          <a class="video-facade" href="https://www.youtube.com/watch?v=ro2ZzNYs15o" data-yt="ro2ZzNYs15o" aria-label="Play: Fer Candel - Georgia on my mind"><img src="https://i.ytimg.com/vi/ro2ZzNYs15o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
+          <iframe src="https://www.youtube.com/embed/ro2ZzNYs15o" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-item reveal reveal-delay-4">
-          <a class="video-facade" href="https://www.youtube.com/watch?v=hOYuYchvX_o" data-yt="hOYuYchvX_o" aria-label="Play: Entrevista en la feria de Jerez Planes de boda para Jerez TV en enero de 2024"><img src="https://i.ytimg.com/vi/hOYuYchvX_o/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /></a>
+          <iframe src="https://www.youtube.com/embed/hOYuYchvX_o" title="Fer Candel Saxofonista" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -1445,18 +1422,6 @@
   })();
   </script>
   <script>
-  /* ── Vídeos: se carga YouTube (sin cookies) solo al pulsar ── */
-  document.querySelectorAll('.video-facade').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0';
-      f.title = a.getAttribute('aria-label');
-      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen = true;
-      a.replaceWith(f);
-    });
-  });
   /* ── Aviso de cookies ── */
   (function () {
     var bar = document.getElementById('cookieBar');
